@@ -1,0 +1,25 @@
+{
+  "servers": {
+    "perplexity": {
+      "name": "perplexity",
+      "transport": "stdio",
+      "command": [
+        "npx",
+        "-y",
+        "server-perplexity-ask"
+      ],
+      "env": {
+        "PERPLEXITY_API_KEY": "${PERPLEXITY_API_KEY}"
+      },
+      "added_at": "2025-09-06T23:58:10.954561+02:00"
+    },
+    "self": {
+      "name": "self",
+      "transport": "stdio",
+      "command": [
+        "./llmcat"
+      ],
+      "added_at": "2025-09-06T23:53:47.563663+02:00"
+    }
+  }
+}
