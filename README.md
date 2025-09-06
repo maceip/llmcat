@@ -13,11 +13,11 @@ export OPENAI_API_KEY=...
 export ANTHROPIC_API_KEY=...
 export GOOGLE_API_KEY=...
 
-# Summarize files (auto-picks available provider)
-./llmcat --provider auto README.md main.go
+# Summarize a single file
+./llmcat README.md
 
 # Pipe from stdin (use '-' explicitly)
-git diff -U0 | ./llmcat - --one-line
+echo "3.14159265358979323846" | ./llmcat -
 
 # See status and provider order
 ./llmcat status
