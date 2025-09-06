@@ -1,0 +1,21 @@
+# Build caches
+.gocache/
+.gomodcache/
+.gopath/
+
+# Binaries
+/llmcat
+/mcpclient
+*.exe
+*.dll
+*.so
+
+# OS
+.DS_Store
+
+# Node
+node_modules/
+
+# Local config
+mcp.json
+
