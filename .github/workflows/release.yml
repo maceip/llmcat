@@ -43,6 +43,7 @@ jobs:
           go build -ldflags="-s -w" -o ${{ matrix.filename }} ./cmd/llmcat
 
       - name: Upload Release Asset
+        if: github.event_name == 'release'
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -51,3 +52,10 @@ jobs:
           asset_path: ./${{ matrix.filename }}
           asset_name: ${{ matrix.filename }}
           asset_content_type: application/octet-stream
+
+      - name: Upload Artifact (for manual runs)
+        if: github.event_name == 'workflow_dispatch'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.filename }}
+          path: ./${{ matrix.filename }}
